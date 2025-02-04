@@ -1,4 +1,4 @@
-    // Variables to hold current user data and transactions
+// Variables to hold current user data and transactions
 let currentUser = null;
 let transactions = [];
 
