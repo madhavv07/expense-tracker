@@ -1,119 +1,143 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #121212; /* Dark background for better contrast */
-    color: #ffffff; /* White text for readability */
-}
-
-h1, h2 {
-    color: #f0f0f0; /* Lighter color for headings */
-    text-align: center; /* Center align headings */
-}
-
-form {
-    margin-bottom: 20px;
-    background-color: #333; /* Darker background for forms */
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-}
-
-input {
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #555; /* Lighter border for inputs */
-    border-radius: 4px;
-    background-color: #222; /* Darker background for inputs */
-    color: white; /* White text for inputs */
-    width: calc(100% - 20px); /* Full width minus padding */
-}
-
-button {
-    padding: 8px 12px;
-    background-color: #28a745; /* Green background for buttons */
-    color: white; /* White text for contrast */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-    width: 100%; /* Full width for buttons */
-}
-
-button:hover {
-    background-color: #218838; /* Darker green on hover */
-}
-
-#transaction-list {
-    list-style-type: none;
+/* General Reset */
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.transaction-item {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #555; /* Lighter border for transaction items */
-    border-radius: 4px;
-    background-color: #444; /* Darker background for transaction items */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-.transaction-item:hover {
-    background-color: #555; /* Change background on hover */
-}
-
-/* New styles for premium look */
+/* Header */
 h1 {
-    font-size: 2.5em;
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* Section Styles */
+#signup-section, #login-section, #transaction-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    margin-top: 20px;
     font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    body {
-        margin: 10px; /* Reduce margin on mobile */
-    }
+/* Input Fields */
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
 
-    form {
-        padding: 10px; /* Reduce padding on mobile */
-    }
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
 
-    input, button {
-        width: 100%; /* Full width for inputs and buttons */
-        margin: 5px 0; /* Adjust margin for mobile */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Show Password Checkbox */
+input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+/* Filter Section */
+#filter-section {
+    position: relative;
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+/* Transaction List */
+#transaction-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#transaction-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+#loading {
+    display: none;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Buttons for login and signup */
+button#show-login, button#show-signup {
+    background-color: #f4f4f9;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    font-size: 1em;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    /* Stack the sections vertically */
+    #signup-section, #login-section, #transaction-section {
+        width: 90%;
+        max-width: 100%;
     }
 
     h1 {
-        font-size: 2em; /* Adjust heading size for mobile */
+        font-size: 1.8em;
     }
 
     h2 {
-        font-size: 1.2em; /* Adjust subheading size for mobile */
+        font-size: 1.2em;
     }
-}
 
-/* Additional styles to prevent overlap */
-#filter-section {
-    margin-top: 20px; /* Add space above the filter section */
-}
+    input, select, button {
+        font-size: 1em;
+        padding: 12px;
+    }
 
-#total-expenses-section {
-    margin-top: 20px; /* Add space above the total expenses section */
-}
-
-/* Styles for signup and login sections */
-#signup-section, #login-section {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    background-color: #1e1e1e; /* Slightly lighter background for forms */
-}
-
-#signup-message, #login-message {
-    margin-top: 10px;
-    color: #ff0000; /* Red color for error messages */
+    /* Reposition filter section below the category dropdown */
+    #filter-section {
+        width: 100%;
+        margin-top: 20px;
+        display: block;
+    }
 }
