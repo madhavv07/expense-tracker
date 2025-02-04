@@ -8,114 +8,151 @@
 /* Body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000;  /* Black background */
+    background-image: url('https://www.example.com/premium-background.jpg'); /* Premium background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #fff;  /* White text */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    height: 100vh;
 }
 
 /* Header */
 h1 {
-    font-size: 2em;
-    color: #4CAF50; /* Green header color for contrast */
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #fff; /* White text */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Section Styles */
 #signup-section, #login-section, #transaction-section {
-    background-color: #333;  /* Dark background for sections */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);  /* Dark semi-transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
+    max-width: 500px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#signup-section:hover, #login-section:hover, #transaction-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 15px;
-    color: #fff;  /* White text for section headers */
+    color: #4CAF50;  /* Green color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Input Fields */
 input[type="text"], input[type="password"], input[type="number"], input[type="date"], select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #777;  /* Light border for inputs */
-    background-color: #444;  /* Dark input background */
-    color: #fff;  /* White text inside input fields */
-    font-size: 1em;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #777;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
 }
 
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #4CAF50;
+    background-color: #444;
+}
+
+/* Amount Highlight */
+#amount {
+    background-color: #4CAF50;  /* Highlighted green color */
+    color: white;
+    font-weight: bold;
+}
+
+/* Button Styling */
 button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1em;
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
-/* Show Password Checkbox */
-input[type="checkbox"] {
-    margin-top: 10px;
+button:active {
+    background-color: #388e3c;
 }
 
 /* Filter Section */
 #filter-section {
-    position: relative;
     display: block;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* Filter Button */
 #filter-button {
-    margin-bottom: 20px; /* Adding margin to create space between filter button and add transaction button */
+    margin-bottom: 30px; /* Adding margin to create space between filter button and add transaction button */
 }
 
 /* Transaction List */
 #transaction-list {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #transaction-list li {
-    background-color: #555;  /* Darker background for transaction items */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #555;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#transaction-list li:hover {
+    background-color: #4CAF50;
 }
 
 /* Loading Spinner */
 #loading {
     display: none;
     font-size: 1.5em;
-    color: #fff;  /* White loading text */
+    color: #fff;
 }
 
 /* Buttons for login and signup */
 button#show-login, button#show-signup {
-    background-color: #f4f4f9;
+    background-color: transparent;
     color: #4CAF50;
-    border: 1px solid #4CAF50;
-    font-size: 1em;
+    border: 2px solid #4CAF50;
+    font-size: 1.2em;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 20px;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+button#show-login:hover, button#show-signup:hover {
+    background-color: #4CAF50;
+    color: white;
 }
 
 /* Mobile Responsiveness */
@@ -127,13 +164,29 @@ button#show-login, button#show-signup {
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     input, select, button {
         font-size: 1em;
-        padding: 12px
+        padding: 12px;
+    }
+
+    /* Reposition filter section below the category dropdown */
+    #filter-section {
+        width: 100%;
+        margin-top: 20px;
+        display: block;
+    }
+
+    /* Highlighting the amount field for mobile */
+    #amount {
+        background-color: #4CAF50;  /* Highlighted green color */
+        color: white;
+        font-weight: bold;
+    }
+}
