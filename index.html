@@ -14,6 +14,7 @@
     </div>
     <div style="clear: both;"></div>
 
+    <!-- Sign-up Section -->
     <div id="signup-section">
         <h2>Sign Up</h2>
         <form id="signup-form">
@@ -28,6 +29,7 @@
         <button id="show-login">Already have an account? Login</button>
     </div>
 
+    <!-- Login Section -->
     <div id="login-section" style="display: none;">
         <h2>Login</h2>
         <form id="login-form">
@@ -42,6 +44,7 @@
         <button id="show-signup">Don't have an account? Sign Up</button>
     </div>
 
+    <!-- Transaction Section -->
     <div id="transaction-section" style="display: none;">
         <form id="transaction-form">
             <label for="amount">Amount</label>
@@ -59,6 +62,7 @@
             <label for="date">Date</label>
             <input type="date" id="date" value="" required> <!-- Auto-filled date -->
             
+            <!-- Filter Section -->
             <div id="filter-section">
                 <h2 style="font-size: 1em;">Filter Transactions</h2>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -75,6 +79,11 @@
     </div>
 
     <div id="loading" style="display: none;">Loading...</div>
+
+    <!-- Signature Section -->
+    <div class="signature-container">
+        <p class="signature-text">Designed by <span class="signature-name">Madhav</span></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
