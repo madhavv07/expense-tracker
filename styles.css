@@ -8,8 +8,8 @@
 /* Body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #000;  /* Black background */
+    color: #fff;  /* White text */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,16 +19,16 @@ body {
 /* Header */
 h1 {
     font-size: 2em;
-    color: #4CAF50;
+    color: #4CAF50; /* Green header color for contrast */
     margin-bottom: 10px;
 }
 
 /* Section Styles */
 #signup-section, #login-section, #transaction-section {
-    background-color: white;
+    background-color: #333;  /* Dark background for sections */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
@@ -37,7 +37,7 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin-bottom: 15px;
-    color: #333;
+    color: #fff;  /* White text for section headers */
 }
 
 /* Input Fields */
@@ -46,7 +46,9 @@ input[type="text"], input[type="password"], input[type="number"], input[type="da
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid #777;  /* Light border for inputs */
+    background-color: #444;  /* Dark input background */
+    color: #fff;  /* White text inside input fields */
     font-size: 1em;
 }
 
@@ -73,10 +75,13 @@ input[type="checkbox"] {
 /* Filter Section */
 #filter-section {
     position: relative;
-    display: none;
-    width: 100%;
+    display: block;
     margin-top: 20px;
-    max-width: 400px;
+}
+
+/* Filter Button */
+#filter-button {
+    margin-bottom: 20px; /* Adding margin to create space between filter button and add transaction button */
 }
 
 /* Transaction List */
@@ -87,18 +92,18 @@ input[type="checkbox"] {
 }
 
 #transaction-list li {
-    background-color: #fff;
+    background-color: #555;  /* Darker background for transaction items */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Loading Spinner */
 #loading {
     display: none;
     font-size: 1.5em;
-    color: #333;
+    color: #fff;  /* White loading text */
 }
 
 /* Buttons for login and signup */
@@ -131,13 +136,4 @@ button#show-login, button#show-signup {
 
     input, select, button {
         font-size: 1em;
-        padding: 12px;
-    }
-
-    /* Reposition filter section below the category dropdown */
-    #filter-section {
-        width: 100%;
-        margin-top: 20px;
-        display: block;
-    }
-}
+        padding: 12px
